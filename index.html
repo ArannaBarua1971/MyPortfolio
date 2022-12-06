@@ -10,73 +10,500 @@
     <!-- google font css link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- fontawsome css link -->
-    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
     <!-- bootstrap css link -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- slick slider css link -->
+    <link rel="stylesheet" href="assets/css/slick.css">
     <!-- main css link -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+
 </head>
 
 <body>
 
-    <!-- navbar section part start-->
-    <nav id="navigation" class="navbar navbar-expand-lg">
+    <!--  header section part start-->
+    <section id="header">
         <div class="container">
-            <a href="index.html" class="navbar-brand">
-                My_PortFolio
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu_bar">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <div class="collapse navbar-collapse" id="menu_bar">
-                <ul class="navbar-nav m-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                </ul>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="top-left-header">
+                        <a href="index.html">MYporFolio</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="top-right-header">
+                        <div class="menu">
+                            <ul class="d-flex justify-content-end">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Home</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>        
-    </nav>
-    <!-- // navbar section part end-->
+        </div>
+    </section>
+    <!-- //  header section part end-->
 
     <!-- banner section part start-->
     <section id="banner">
-      <div class="container">
-        <div class="row">
-            <div class="col-lg-7 d-flex align-items-center">
-                <div class="banner_content col-lg-7">
-                    <h2>Hi , I am Aranna Barua</h2>
-                    <span>I am a Web Designer</span>
-
-                    <p>
-                        I think life is so hard .But our work make it 
-                        easy.Which are happend every day in a programmer 
-                        life . And many Problems are come and gone because a Programmer have a programming Language...
-                    </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-content">
+                        <h5>Hi , I'm Aranna Barua.</h5>
+                        <p>I am a frotend-web designer</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="banner-img">
+                        <div class="circle"></div>
+                        <img src="assets/img/banner.png" alt="">
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-5">
-               <div class="banner_thumb">
-                <img class="img-fluid" src="img/my_pic.jpg" alt="">
-               </div>
-            </div>
         </div>
-      </div>  
     </section>
     <!-- // banner section part end-->
 
+    <!-- about section part start-->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="about-img">
+                        <img src="assets/img/my_pic.png" alt="about_pic">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="about-content">
+                        <h3>About me</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum cupiditate facilis, dolorum
+                            minima impedit aut veniam vel tempore quidem dignissimos animi asperiores amet molestias
+                            sapiente tempora ipsum quis perferendis. Culpa?</p>
+                    </div>
+                    <div class="about-slider">
+                        <div class="about-menu-slider">
+                            <ul class="d-flex">
+                                <li id="home1" class="active" onclick="show('home1','home2','home3','home4','home5')"
+                                    href="#">Home
+                                </li>
+                                <li id="home2" onclick="show('home2','home1','home3','home4','home5')" href="#">Home
+                                </li>
+                                <li id="home3" onclick="show('home3','home2','home1','home4','home5')" href="#">Home
+                                </li>
+                                <li id="home4" onclick="show('home4','home2','home3','home1','home5')" href="#">Home
+                                </li>
+                                <li id="home5" onclick="show('home5','home2','home3','home4','home1')" href="#">Home
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="about-content-slider">
+                            <div class="home1">
+                                <div class="single-tab-content">
+                                    <ul>
+                                        <li>
+                                            <h5>User experience design
+                                                <span> - UI/UX</span>
+                                            </h5>Delight the user and make it
+                                            work.
+                                        </li>
+                                        <li>
+                                            <h5>Web and user interface design
+                                                <span> - Development</span>
+                                            </h5>Websites, web experiences,
+                                            ...
+                                        </li>
+                                        <li>
+                                            <h5>Interaction design
+                                                <span>-Animation</span>
+                                            </h5>I
+                                            like to move it move it.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="home2 display-none">
+                                <div class="single-tab-content">
+                                    <ul>
+                                        <li>User experience design
+                                            <span> - UI/UX</span><br>Delight the user and make it
+                                            work.
+                                        </li>
+                                        <li>Web and user interface design
+                                            <span> - Development</span><br>Websites, web experiences,
+                                            ...
+                                        </li>
+                                        <li>Interaction design
+                                            <span>-Animation</span><br>I
+                                            like to move it move it.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="home3 display-none">
+                                <div class="single-tab-content">
+                                    <ul>
+                                        <li>
+                                            <h5>User experience design
+                                                <span> - UI/UX</span>
+                                            </h5>Delight the user and make it
+                                            work.
+                                        </li>
+                                        <li>
+                                            <h5>Web and user interface design
+                                                <span> - Development</span>
+                                            </h5>Websites, web experiences,
+                                            ...
+                                        </li>
+                                        <li>
+                                            <h5>Interaction design
+                                                <span>-Animation</span>
+                                            </h5>I
+                                            like to move it move it.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="home4 display-none">
+                                <div class="single-tab-content">
+                                    <ul>
+                                        <li>
+                                            <h5>User experience design
+                                                <span> - UI/UX</span>
+                                            </h5>Delight the user and make it
+                                            work.
+                                        </li>
+                                        <li>
+                                            <h5>Web and user interface design
+                                                <span> - Development</span>
+                                            </h5>Websites, web experiences,
+                                            ...
+                                        </li>
+                                        <li>
+                                            <h5>Interaction design
+                                                <span>-Animation</span>
+                                            </h5>I
+                                            like to move it move it.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="home5 display-none">
+                                <div class="single-tab-content">
+                                    <ul>
+                                        <li>
+                                            <h5>User experience design
+                                                <span> - UI/UX</span>
+                                            </h5>Delight the user and make it
+                                            work.
+                                        </li>
+                                        <li>
+                                            <h5>Web and user interface design
+                                                <span> - Development</span>
+                                            </h5>Websites, web experiences,
+                                            ...
+                                        </li>
+                                        <li>
+                                            <h5>Interaction design
+                                                <span>-Animation</span>
+                                            </h5>I
+                                            like to move it move it.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- // about section part end-->
+
+    <!-- project section part start-->
+    <section id="project">
+        <div class="container">
+            <div class="title-header">
+                <h3>My Latest Project</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, distinctio vitae<br> earum fugiat
+                    porro saepe deserunt illum, iusto doloribus ipsum.</p>
+            </div>
+            <div class="project-slider">
+                <div class="slider-item">
+                    <div class="project">
+                        <div class="item col-lg-5">
+                            <div class="thumb">
+                                <img src="assets/img/project.JPG" alt="Project thumb">
+                            </div>
+                            <div class="overlay-content">
+                                <h5>Design</h5>
+                                <h3>Created by HTML,CSS AND JAVASCRIPT</h3>
+                                <a href="#">Live Now</a>
+                            </div>
+                        </div>
+                        <div class="item-content col-lg-7">
+                            <h3>Web Design</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum placeat laboriosam nisi dicta? Nam nulla, aut hic dolorum porro ipsam alias. Ipsam ullam sequi labore! Deleniti deserunt cum ipsum minus!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, dolore. Autem totam est temporibus maiores deserunt et voluptate ipsam, ab, vel quos neque inventore, voluptatibus nostrum cupiditate dolorem dignissimos odio?
+                            </p>
+                            <h5>Using Language:-</h5>
+                            <ul>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="project">
+                        <div class="item col-lg-5">
+                            <div class="thumb">
+                                <img src="assets/img/project.JPG" alt="Project thumb">
+                            </div>
+                            <div class="overlay-content">
+                                <h5>Design</h5>
+                                <h3>Created by HTML,CSS AND JAVASCRIPT</h3>
+                                <a href="#">Live Now</a>
+                            </div>
+                        </div>
+                        <div class="item-content col-lg-7">
+                            <h3>Web Design</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum placeat laboriosam nisi dicta? Nam nulla, aut hic dolorum porro ipsam alias. Ipsam ullam sequi labore! Deleniti deserunt cum ipsum minus!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, dolore. Autem totam est temporibus maiores deserunt et voluptate ipsam, ab, vel quos neque inventore, voluptatibus nostrum cupiditate dolorem dignissimos odio?
+                            </p>
+                            <h5>Using Language:-</h5>
+                            <ul>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="project">
+                        <div class="item col-lg-5">
+                            <div class="thumb">
+                                <img src="assets/img/project.JPG" alt="Project thumb">
+                            </div>
+                            <div class="overlay-content">
+                                <h5>Design</h5>
+                                <h3>Created by HTML,CSS AND JAVASCRIPT</h3>
+                                <a href="#">Live Now</a>
+                            </div>
+                        </div>
+                        <div class="item-content col-lg-7">
+                            <h3>Web Design</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum placeat laboriosam nisi dicta? Nam nulla, aut hic dolorum porro ipsam alias. Ipsam ullam sequi labore! Deleniti deserunt cum ipsum minus!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, dolore. Autem totam est temporibus maiores deserunt et voluptate ipsam, ab, vel quos neque inventore, voluptatibus nostrum cupiditate dolorem dignissimos odio?
+                            </p>
+                            <h5>Using Language:-</h5>
+                            <ul>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="project">
+                        <div class="item col-lg-5">
+                            <div class="thumb">
+                                <img src="assets/img/project.JPG" alt="Project thumb">
+                            </div>
+                            <div class="overlay-content">
+                                <h5>Design</h5>
+                                <h3>Created by HTML,CSS AND JAVASCRIPT</h3>
+                                <a href="#">Live Now</a>
+                            </div>
+                        </div>
+                        <div class="item-content col-lg-7">
+                            <h3>Web Design</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum placeat laboriosam nisi dicta? Nam nulla, aut hic dolorum porro ipsam alias. Ipsam ullam sequi labore! Deleniti deserunt cum ipsum minus!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, dolore. Autem totam est temporibus maiores deserunt et voluptate ipsam, ab, vel quos neque inventore, voluptatibus nostrum cupiditate dolorem dignissimos odio?
+                            </p>
+                            <h5>Using Language:-</h5>
+                            <ul>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="project">
+                        <div class="item col-lg-5">
+                            <div class="thumb">
+                                <img src="assets/img/project.JPG" alt="Project thumb">
+                            </div>
+                            <div class="overlay-content">
+                                <h5>Design</h5>
+                                <h3>Created by HTML,CSS AND JAVASCRIPT</h3>
+                                <a href="#">Live Now</a>
+                            </div>
+                        </div>
+                        <div class="item-content col-lg-7">
+                            <h3>Web Design</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum placeat laboriosam nisi dicta? Nam nulla, aut hic dolorum porro ipsam alias. Ipsam ullam sequi labore! Deleniti deserunt cum ipsum minus!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, dolore. Autem totam est temporibus maiores deserunt et voluptate ipsam, ab, vel quos neque inventore, voluptatibus nostrum cupiditate dolorem dignissimos odio?
+                            </p>
+                            <h5>Using Language:-</h5>
+                            <ul>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="project">
+                        <div class="item col-lg-5">
+                            <div class="thumb">
+                                <img src="assets/img/project.JPG" alt="Project thumb">
+                            </div>
+                            <div class="overlay-content">
+                                <h5>Design</h5>
+                                <h3>Created by HTML,CSS AND JAVASCRIPT</h3>
+                                <a href="#">Live Now</a>
+                            </div>
+                        </div>
+                        <div class="item-content col-lg-7">
+                            <h3>Web Design</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum placeat laboriosam nisi dicta? Nam nulla, aut hic dolorum porro ipsam alias. Ipsam ullam sequi labore! Deleniti deserunt cum ipsum minus!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, dolore. Autem totam est temporibus maiores deserunt et voluptate ipsam, ab, vel quos neque inventore, voluptatibus nostrum cupiditate dolorem dignissimos odio?
+                            </p>
+                            <h5>Using Language:-</h5>
+                            <ul>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="project">
+                        <div class="item col-lg-5">
+                            <div class="thumb">
+                                <img src="assets/img/project.JPG" alt="Project thumb">
+                            </div>
+                            <div class="overlay-content">
+                                <h5>Design</h5>
+                                <h3>Created by HTML,CSS AND JAVASCRIPT</h3>
+                                <a href="#">Live Now</a>
+                            </div>
+                        </div>
+                        <div class="item-content col-lg-7">
+                            <h3>Web Design</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum placeat laboriosam nisi dicta? Nam nulla, aut hic dolorum porro ipsam alias. Ipsam ullam sequi labore! Deleniti deserunt cum ipsum minus!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, dolore. Autem totam est temporibus maiores deserunt et voluptate ipsam, ab, vel quos neque inventore, voluptatibus nostrum cupiditate dolorem dignissimos odio?
+                            </p>
+                            <h5>Using Language:-</h5>
+                            <ul>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                                <li>HTML</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- // project section part end-->
+
+    <!-- contact section part start-->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-part">
+                        <div class="title-header">
+                            <h3>Hire Me</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, distinctio vitae
+                                earum fugiat
+                                porro saepe deserunt illum, iusto doloribus ipsum.</p>
+                        </div>
+                        <div class="form-part">
+                            <form action="">
+                                <input type="text" placeholder="Your Name*">
+                                <input type="email" placeholder="Your Email*">
+                                <input type="text" placeholder="Write a subject">
+                                <textarea name="" id="" rows="8" placeholder="Message..."></textarea>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-thumb">
+                        <img src="assets/img/my_pic.png" alt="my pic">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- // contact section part end-->
+
+    <!-- footer section part start-->
+    <section id="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-9">
+                    <div class="social-media-part">
+                        <ul class="d-flex">
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="copright-content">
+                        <p>Copyright © 2022 Aranna Barua. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- // footer section part end-->
+
     <!-- jquery link -->
-    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
     <!-- bootstrap js link -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- slick js link -->
+    <script src="assets/js/slick.min.js"></script>
     <!-- main js link -->
-    <script src="js/app.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

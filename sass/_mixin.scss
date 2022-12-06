@@ -1,0 +1,164 @@
+// header mixin
+@mixin header($textAlign: center) {
+    h3 {
+        font-size: 60px;
+        font-family: "Open Sans", sans-serif;
+        color: #000;
+        text-align: $textAlign;
+        font-weight: 700;
+    }
+
+    p {
+        font-family: $raleway;
+        font-weight: 500;
+        color: $black-gray;
+        font-size: 17px;
+        text-align: $textAlign;
+        margin-top: 10px;
+    }
+}
+
+// PROJECT CARD
+@mixin card() {
+    .item {
+        position: relative;
+        transition: 0.3s linear;
+        transform: scale(0.9);
+    }
+
+    .item::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.7791491596638656) 0%, rgba(255, 255, 255, 0.31416316526610644) 75%);
+    }
+
+    .item:hover::before {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.7203256302521008) 0%, rgba(255, 0, 60, 0.8) 72%);
+    }
+
+    .item:hover {
+        transform: scale(0.95);
+    }
+
+    .overlay-content {
+        position: absolute;
+        bottom: 90px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        h5 {
+            font-family: $raleway;
+            font-weight: 300;
+            color: $light-gray;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: $raleway;
+            font-weight: 600;
+            color: $white;
+            font-size: 25px;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        a {
+            color: $white;
+            border: 1px solid $white;
+            border-radius: 5px;
+            padding: 5px 10px;
+            display: inline-block;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 10px;
+            transition: 0.3s linear;
+
+        }
+
+        a:hover {
+            background: $menu-bar;
+            border: 1px solid $menu-bar;
+        }
+    }
+}
+
+// form section
+@mixin form() {
+    input:nth-child(1) {
+        margin-top: 50px;
+    }
+
+    input {
+        display: block;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin: 20px 0px;
+        width: 100%;
+    }
+
+    textarea {
+        padding: 10px 15px;
+        width: 100%;
+    }
+}
+
+// arrow settings
+@mixin arrow {
+    i {
+        background: $light-gray;
+        font-size: 30px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 9;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 50%;
+        left: -5%;
+    }
+
+    i.fa-chevron-right {
+        right: -5%;
+        left: inherit;
+    }
+
+    ul.slick-dots {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        li {
+            margin: 0px 10px;
+
+            button {
+                border: none;
+                background-color: rgba(255, 0, 60, 0.4);
+                font-size: 1px;
+                color: rgba(255, 0, 60, 0.4);
+                width: 5px;
+                height: 5px;
+                border-radius: 5px;
+                transition: 0.1s linear;
+            }
+
+            button:hover {
+                background-color: rgba(255, 0, 60, 1);
+                width: 7px;
+                height: 7px;
+                border-radius: 5px;
+                color: rgba(255, 0, 60, 1);
+            }
+        }
+
+        li.slick-active button {
+            background-color: rgba(255, 0, 60, 1);
+            width: 7px;
+            height: 7px;
+            border-radius: 5px;
+            color: rgba(255, 0, 60, 1);
+        }
+    }
+}

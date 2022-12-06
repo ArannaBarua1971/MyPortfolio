@@ -1,0 +1,309 @@
+@import 'variable';
+@import 'mixin';
+
+// common section css
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+small,
+ul,
+ol p {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+// header section css
+#header {
+    padding: 20px 0px;
+    background: $commonColor;
+    border: 2px solid white;
+
+    .top-left-header {
+        a {
+            font-size: 20px;
+            color: $white;
+        }
+    }
+
+    .top-right-header {
+        .menu ul {
+            li {
+                margin: 0px 15px;
+
+                a {
+                    color: $white;
+                    font-size: 15px;
+                    position: relative;
+                }
+
+                a::after {
+                    content: '';
+                    position: absolute;
+                    top: 110%;
+                    left: 0;
+                    width: 30%;
+                    height: 3px;
+                    background: $menu-bar;
+                    transition: 0.3s linear;
+                }
+
+                a:hover::after {
+                    width: 100%;
+                }
+
+            }
+        }
+    }
+}
+
+// banner section css
+#banner {
+    background-color: $bannerBg ;
+    height: 636px;
+
+    .container,
+    .row {
+        height: 100%;
+        align-items: center;
+    }
+
+    .banner-content {
+        border-left: 6px solid $menu-bar;
+        width: 50%;
+        padding-left: 20px;
+    }
+
+    h5 {
+        font-size: 70px;
+        font-weight: 600;
+        font-family: $open-sans;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+
+}
+
+// about section css
+#about {
+    padding: 50px 0px;
+
+    .about-img {
+        background: $black-gray;
+    }
+
+    .row {
+        align-items: center;
+    }
+
+    .about-content {
+        padding: 40px;
+        padding-bottom: 0px;
+
+        h3 {
+            font-size: 40px;
+            font-weight: 600;
+            font-family: $open-sans;
+            margin-bottom: 20px;
+        }
+
+        p {
+            width: 90%;
+            font-size: 17px;
+            font-weight: 500;
+        }
+    }
+
+    .display-none {
+        display: none;
+    }
+
+    .active {
+        border-bottom: 3px solid $menu-bar;
+    }
+
+    .about-slider {
+        padding: 40px;
+        padding-top: 0px;
+
+        .about-menu-slider {
+            margin-bottom: 10px;
+            padding: 5px 0px;
+
+            ul li {
+                margin: 0px 10px;
+                position: relative;
+                color: $commonColor;
+                font-weight: 600;
+                font-size: 17px;
+                cursor: pointer;
+                font-family: $raleway;
+            }
+        }
+    }
+
+    .about-content-slider {
+        div {
+            transition: 0.3s linear;
+
+            .single-tab-content {
+                ul li {
+                    padding: 10px 0px;
+                    font-family: $raleway;
+                    font-weight: 300;
+                    font-size: 19px;
+
+                    h5 {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    span {
+                        font-weight: 300;
+                        font-size: 19px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// project section scss
+#project {
+    margin-bottom: 40px;
+
+    .title-header {
+        @include header();
+    }
+
+    .project-slider {
+        position: relative;
+        @include arrow();
+    }
+
+    .project {
+        display: flex;
+        align-items: center;
+        padding: 0px 38px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        border-radius: 10px;
+        @include card();
+
+        .item-content {
+            width: 55%;
+            margin-left: 50px;
+            h3 {
+                font-size: 45px;
+                font-family: $raleway;
+                font-weight: 600;
+                color: $commonColor;
+            }
+
+            p {
+                line-height: 25px;
+                color: $commonColor;
+                font-size: 17px;
+                margin-top: 20px;
+            }
+
+            h5 {
+                font-size: 25px;
+                font-family: $raleway;
+                font-weight: 500;
+                color: $menu-bar;
+                margin-bottom: 20px;
+            }
+
+            ul {
+                margin-left: 38px;
+                list-style-type: circle;
+                li {
+                    color: $commonColor;
+                    font-size: 17px;
+                    font-weight: 400;
+                    font-family: $open-sans;
+                }
+            }
+        }
+    }
+}
+
+// contact section scss
+#contact {
+    .contact-part {
+        .title-header {
+            @include header(left);
+        }
+
+        .form-part form {
+            @include form();
+        }
+    }
+
+    .contact-thumb img {
+        width: 84%;
+    }
+}
+
+// footer section scss
+#footer {
+    margin-top: 30px;
+    background: $black-gray;
+    padding: 20px 0px;
+
+    .social-media-part ul {
+        justify-content: center;
+
+        li {
+            padding: 10px 0px;
+
+            a {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                text-align: center;
+                border: 2px solid $white;
+                border-radius: 50%;
+                color: $white;
+                line-height: 60px;
+                margin: 0px 10px;
+                font-size: 19px;
+                transition: 0.3s linear;
+            }
+
+            a:hover {
+                background: $menu-bar;
+                border-color: $menu-bar;
+            }
+        }
+    }
+
+    .copright-content {
+        p {
+            color: $white;
+            padding: 0;
+            padding: 15px 0px;
+        }
+    }
+
+}
