@@ -28,7 +28,9 @@ a {
 img {
     max-width: 100%;
 }
-
+*{
+    scroll-behavior: smooth;
+}
 
 // header section css
 #header {
@@ -68,9 +70,28 @@ img {
                 a:hover::after {
                     width: 100%;
                 }
+                .active::after{
+                    width: 100%;
+                }
 
             }
         }
+    }
+}
+.fixed{
+    position: fixed ;
+    width: 100%;
+    z-index: 99;
+    background: $commonColor;
+    top: 0;
+    animation: fixed 0.3s linear;
+}
+@keyframes fixed {
+    0%{
+        top: -30px;
+    }    
+    100%{
+        top: 0;
     }
 }
 
@@ -306,4 +327,13 @@ img {
         }
     }
 
+}
+
+// gotoTop section scss
+#gotoTop{
+    @include gotoTop();
+}
+.show{
+ opacity: 1 !important;
+ visibility: visible !important;
 }
