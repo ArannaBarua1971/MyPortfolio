@@ -11,49 +11,67 @@ $(document).ready(function () {
     $(window).scroll(function () {
         var scrollposition = $(window).scrollTop()
         console.log(scrollposition)
-        if(scrollposition<100){
-            $("#header").removeClass("fixed")
+        if (scrollposition < 100) {
+            $("#floating-header").removeClass("op-vi")
         }
-        if(scrollposition<300){
+        if (scrollposition < 300) {
             $("#gotoTop").removeClass("show")
         }
         if (scrollposition > 300) {
-            $("#header").addClass("fixed")
+            $("#floating-header").addClass("op-vi")
             $("#gotoTop").addClass("show")
         }
         if (scrollposition < 500) {
             $("#header .menu ul li:nth-child(1) a").addClass("active")
             $("#header .menu ul li:nth-child(2) a").removeClass("active")
+            $("#floating-header .menu ul li:nth-child(1) a").addClass("active")
+            $("#floating-header .menu ul li:nth-child(2) a").removeClass("active")
         }
         if (scrollposition > 500) {
             $("#header .menu ul li:nth-child(1) a").removeClass("active")
             $("#header .menu ul li:nth-child(2) a").addClass("active")
+            $("#floating-header .menu ul li:nth-child(1) a").removeClass("active")
+            $("#floating-header .menu ul li:nth-child(2) a").addClass("active")
         }
         if (scrollposition < 1000) {
             $("#header .menu ul li:nth-child(3) a").removeClass("active")
+            $("#floating-header .menu ul li:nth-child(3) a").removeClass("active")
         }
         if (scrollposition > 1000) {
             $("#header .menu ul li:nth-child(2) a").removeClass("active")
             $("#header .menu ul li:nth-child(3) a").addClass("active")
+            $("#floating-header .menu ul li:nth-child(2) a").removeClass("active")
+            $("#floating-header .menu ul li:nth-child(3) a").addClass("active")
         }
         if (scrollposition < 2000) {
             $("#header .menu ul li:nth-child(4) a").removeClass("active")
+            $("#floating-header .menu ul li:nth-child(4) a").removeClass("active")
         }
         if (scrollposition > 2000) {
             $("#header .menu ul li:nth-child(3) a").removeClass("active")
             $("#header .menu ul li:nth-child(4) a").addClass("active")
+            $("#floating-header .menu ul li:nth-child(3) a").removeClass("active")
+            $("#floating-header .menu ul li:nth-child(4) a").addClass("active")
 
         }
-        
+
     })
     $(window).load(function () {
-        $(window).scrollTop(0)
+        // $(window).scrollTop(0)
         $("#header .menu ul li:nth-child(1) a").addClass("active")
+        $("#floating-header .menu ul li:nth-child(1) a").addClass("active")
     })
-    $("#gotoTop button").on('click',function(){
+    $("#gotoTop button").on('click', function () {
         $("html,body").animate({
-            scrollTop:0,
-        },500)
+            scrollTop: 0,
+        }, 500)
+    })
+    // show handbar menu
+    $("#floating-header .hand-bar button").on('click', function () {
+        $("#floating-header .menu ul").toggleClass("op-vi")
+        $("#floating-header .menu ul").toggleClass("animate")
+        $("#floating-header #bar-icon2").toggleClass("op-vi")
+        $("#floating-header #bar-icon1").toggleClass("di-n")
     })
 })
 // --> about section js

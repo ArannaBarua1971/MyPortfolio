@@ -59,7 +59,7 @@
             font-family: $raleway;
             font-weight: 600;
             color: $white;
-            font-size: 25px;
+            font-size: 17px;
             text-align: center;
             margin-top: 15px;
         }
@@ -88,14 +88,14 @@
 // form section
 @mixin form() {
     input:nth-child(1) {
-        margin-top: 50px;
+        margin-top: 30px;
     }
 
     input {
         display: block;
         padding: 10px 15px;
         border-radius: 5px;
-        margin: 20px 0px;
+        margin: 16px 0px;
         width: 100%;
     }
 

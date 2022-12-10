@@ -1,5 +1,6 @@
 @import 'variable';
 @import 'mixin';
+@import 'responsive';
 
 // common section css
 h1,
@@ -28,7 +29,8 @@ a {
 img {
     max-width: 100%;
 }
-*{
+
+* {
     scroll-behavior: smooth;
 }
 
@@ -54,51 +56,111 @@ img {
                     color: $white;
                     font-size: 15px;
                     position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 110%;
+                        left: 0;
+                        width: 30%;
+                        height: 3px;
+                        background: $menu-bar;
+                        transition: 0.3s linear;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                    }
+
+
                 }
 
-                a::after {
-                    content: '';
-                    position: absolute;
-                    top: 110%;
-                    left: 0;
-                    width: 30%;
-                    height: 3px;
-                    background: $menu-bar;
-                    transition: 0.3s linear;
-                }
-
-                a:hover::after {
+                .active::after {
                     width: 100%;
                 }
-                .active::after{
-                    width: 100%;
-                }
-
             }
         }
     }
 }
-.fixed{
-    position: fixed ;
-    width: 100%;
-    z-index: 99;
-    background: $commonColor;
-    top: 0;
-    animation: fixed 0.3s linear;
-}
-@keyframes fixed {
-    0%{
-        top: -30px;
-    }    
-    100%{
-        top: 0;
+
+#floating-header {
+    position: fixed;
+    top: 10px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+
+    .hand-bar button {
+        color: $white;
+        bottom: 60px;
+        top: 5%;
+        background: $commonColor;
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
     }
+    #bar-icon2{
+        opacity:0;
+        visibility: hidden;
+    }
+
+    .menu ul {
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 20px;
+        background: $commonColor;
+        li{
+            margin: 20px 0px;
+            a {
+            color: $white;
+            font-size: 15px;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 110%;
+                left: 0;
+                width: 30%;
+                height: 3px;
+                background: $menu-bar;
+                transition: 0.3s linear;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+
+
+        }
+
+        .active::after {
+            width: 100%;
+        }
+    }
+}
+}
+.animate {
+    height: 100vh;
+    width: 300px;
+}
+
+.op-vi {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+.di-n{
+    display: none;
 }
 
 // banner section css
 #banner {
     background-color: $bannerBg ;
-    height: 636px;
+    height: 545px;
 
     .container,
     .row {
@@ -145,12 +207,12 @@ img {
             font-size: 40px;
             font-weight: 600;
             font-family: $open-sans;
-            margin-bottom: 20px;
+            margin-bottom: 7px;
         }
 
         p {
             width: 90%;
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 500;
         }
     }
@@ -192,11 +254,12 @@ img {
                     padding: 10px 0px;
                     font-family: $raleway;
                     font-weight: 300;
-                    font-size: 19px;
+                    font-size: 16px;
 
                     h5 {
                         margin: 0;
                         padding: 0;
+                        font-size: 19px;
                     }
 
                     span {
@@ -228,11 +291,13 @@ img {
         padding: 0px 38px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
         border-radius: 10px;
+        background: $light-gray;
         @include card();
 
         .item-content {
             width: 55%;
             margin-left: 50px;
+
             h3 {
                 font-size: 45px;
                 font-family: $raleway;
@@ -258,6 +323,7 @@ img {
             ul {
                 margin-left: 38px;
                 list-style-type: circle;
+
                 li {
                     color: $commonColor;
                     font-size: 17px;
@@ -282,16 +348,14 @@ img {
     }
 
     .contact-thumb img {
-        width: 84%;
+        width: 99%;
     }
 }
 
 // footer section scss
 #footer {
-    margin-top: 30px;
     background: $black-gray;
-    padding: 20px 0px;
-
+    padding: 10px 0px;
     .social-media-part ul {
         justify-content: center;
 
@@ -300,21 +364,21 @@ img {
 
             a {
                 display: inline-block;
-                width: 60px;
-                height: 60px;
+                width: 50px;
+                height: 50px;
                 text-align: center;
                 border: 2px solid $white;
                 border-radius: 50%;
                 color: $white;
-                line-height: 60px;
+                line-height: 50px;
                 margin: 0px 10px;
                 font-size: 19px;
-                transition: 0.3s linear;
-            }
+                transition: 0.2s linear;
 
-            a:hover {
-                background: $menu-bar;
-                border-color: $menu-bar;
+                &:hover {
+                    background: $menu-bar;
+                    border-color: $menu-bar;
+                }
             }
         }
     }
@@ -330,10 +394,11 @@ img {
 }
 
 // gotoTop section scss
-#gotoTop{
+#gotoTop {
     @include gotoTop();
 }
-.show{
- opacity: 1 !important;
- visibility: visible !important;
+
+.show {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
